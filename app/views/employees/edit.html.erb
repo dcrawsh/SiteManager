@@ -1,0 +1,12 @@
+<h2> Edit Employee:</h2>
+
+<form method="post" action="/sites/<%=@site.id%>/employees/<%=@employee.workdayid%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH"/>
+  <label>First Name:<input type="text" name="firstname" value="<%= @employee.firstname %>"></label><br>
+  <label>Last Name:<input type="text" name="lastname" value="<%=@employee.lastname %>"></label><br>
+    <label>Workday Id:<input type="text" name="workdayid" value="<%=@employee.workdayid%>"></label><br>
+
+  <input type="submit" value="submit">
+</form>
+
+<a href="/employees/new">Add Employee</a><br>

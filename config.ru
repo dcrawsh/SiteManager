@@ -1,4 +1,5 @@
-require_relative './config/environment'
+require './config/environment'
+
 
 use Rack::MethodOverride
 ### use OtherController1
@@ -6,5 +7,6 @@ use Rack::MethodOverride
 ### use OtherController3
 use SessionsController
 use SiteController
-use UserUssController
+use UsersController
+use EmployeeController
 run ApplicationController

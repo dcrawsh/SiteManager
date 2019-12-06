@@ -1,0 +1,10 @@
+<h2> Edit Site:</h2>
+
+<form method="post" action="/sites/<%=@site.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <label>Name:<input type="text" name="name" value="<%= @site.name %>"></label><br>
+  <label>SiteId:<input type="text" name="siteid" value="<%=@site.siteid %>"></label><br>
+  <input type="submit" value="submit">
+</form>
+
+<a href="/employees/new">Add Employee</a><br>

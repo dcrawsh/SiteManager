@@ -1,0 +1,23 @@
+<p>Name:<%=@site.name%></p><br>
+<label>SiteId:<%=@site.siteid%></label></p>
+<ul>
+<%@employees.each do |employee|%>
+
+
+  <li><a href="/sites/<%=@site.id%>/employees/<%=employee.workdayid%>"><%=employee.firstname + " " + employee.lastname%></a></li>
+
+<%end%>
+</ul>
+
+<a href="/sites/<%=@site.id%>/employees/new">Add Employee</a><br>
+<a href="/sites/<%=@site.id%>/edit">Edit Site</a><br>
+
+
+
+<form method="post" action="/sites/<%=@site.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Site">
+</form>
+
+
+

@@ -1,0 +1,10 @@
+<%=@employee.firstname%><br>
+<%=@employee.lastname%><br>
+<%=@employee.workdayid%><br>
+<a href="/sites/<%=@site.id%>/employees/<%=@employee.workdayid%>/edit">Edit Employee</a><br>
+<a href="/sites/<%=@site.id%>">Employee List</a>
+
+<form method="post" action="/sites/<%=@site.id%>/employees/<%=@employee.workdayid%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Employee">
+</form>

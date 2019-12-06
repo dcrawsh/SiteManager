@@ -1,0 +1,14 @@
+
+
+<h1>Company Sites</h1>
+    <ul>
+        <%@sites.each do |site|%>
+        <li><a href="/sites/<%=site.id%>"><%=site.name%></a></li>
+        <%end%>
+    </ul>
+<form action="/sites/new" method="GET">
+    <input type="submit" value="Create New Site"/>
+</form>
+<p><a href="/logout">Logout</a></p>
+
+
