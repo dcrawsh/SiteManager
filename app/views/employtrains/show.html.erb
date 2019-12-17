@@ -1,0 +1,4 @@
+<%@employtrains.each do |employtrain|%>
+<%="#{employtrain.employee.firstname} #{employtrain.employee.lastname} completed #{employtrain.training.name} on #{employtrain.date.to_s}"%><br>
+
+<%end%>

@@ -19,12 +19,12 @@ class EmployeeController < ApplicationController
     end
     
     post '/sites/:id/employees' do
-      
+      @site = Site.find_by_id(params[:id])
       if logged_in?
-        if params[:firstname] == "" || params[:lastname] == "" 
+        if params[:firstname] == "" || params[:lastname] == "" || params[:workdayid] == ""
           redirect to "/sites/#{@site.id}/employees/new"
         else
-          @site = Site.find_by_id(params[:id])
+          
           @site.employees.build(firstname: params[:firstname], lastname: params[:lastname], workdayid: params[:workdayid])
           if @site.save
             redirect to "/sites/#{@site.id}"
@@ -63,6 +63,17 @@ class EmployeeController < ApplicationController
         else
           redirect to '/login'
         end
+    end
+
+    get '/sites/:id/employees/:workdayid/employtrains' do
+      if logged_in?
+        @site = Site.find_by_id(params[:id])
+        @employees = @site.employees
+        @employee = @employees.find_by(workdayid: params[:workdayid])
+        erb :'/employees/show2.html'
+      else
+        redirect to '/login'
+      end
     end
 
     get '/sites/:id/employees/:workdayid/edit' do

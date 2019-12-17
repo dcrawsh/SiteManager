@@ -1,0 +1,11 @@
+<h1>Trainings</h1>
+    <ul>
+        <%@trainings.each do |training|%>
+        <li><a href="/trainings/<%=training.id%>"><%=training.name%></a></li>
+        <%end%>
+    </ul>
+<p><a href="/trainings/new">Create New Training</a></p>
+<p><a href="/employtrains/new">Add Completion date</a></p><br>
+
+
+

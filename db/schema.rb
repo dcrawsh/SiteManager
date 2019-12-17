@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_042230) do
+ActiveRecord::Schema.define(version: 2019_12_12_230911) do
 
   create_table "employees", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
-    t.string "workdayid"
+    t.integer "workdayid"
     t.integer "site_id"
   end
 

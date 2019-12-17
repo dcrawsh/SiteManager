@@ -9,4 +9,6 @@ use SessionsController
 use SiteController
 use UsersController
 use EmployeeController
+use TrainingController
+use EmploytrainController
 run ApplicationController

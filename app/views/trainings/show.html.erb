@@ -1,0 +1,6 @@
+<%@training.employtrains.each do |employtrain|%>
+
+<ul>
+    <li><%=employtrain.employee.firstname + " " + employtrain.employee.lastname + " " + employtrain.date.to_s%></li>
+</ul>
+    <%end%>

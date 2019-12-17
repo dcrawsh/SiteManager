@@ -1,0 +1,31 @@
+<form action="/employtrains" method="POST">
+<label>Please choose one or more Employees:<br>
+  <select name="employee_ids[]" multiple>
+    <optgroup label="Employees:">
+      <%@employees.each do |e|%>
+      <option value="<%=e.id%>"><%=e.firstname + " " + e.lastname%></option>
+      <%end%>
+      
+    </optgroup>
+  </select>
+</label><br>
+
+<label>Please choose one Training:<br>
+  <select name="training_id">
+    <optgroup label="Trainings:">
+      <%@trainings.each do |t|%>
+      <option value="<%=t.id%>"><%=t.name%></option>
+      <%end%>
+      
+    </optgroup>
+  </select>
+</label><br>
+
+  <label for="completion">Enter the date of completion:
+    <input type="date" name="date" required pattern="\d{4}-\d{2}-\d{2}">
+    <span class="validity"></span>
+  </label>
+  <p>
+    <button>Submit</button>
+  </p>
+</form>

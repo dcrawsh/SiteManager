@@ -1,6 +1,9 @@
-<%=@employee.firstname%><br>
-<%=@employee.lastname%><br>
-<%=@employee.workdayid%><br>
+<label>First Name:<%= @employee.firstname%></label><br>
+<label>Last Name:<%= @employee.lastname%></label><br>
+<label>Workday Id:<%= @employee.workdayid%></label><br>
+
+
+<a href="/sites/<%=@site.id%>/employees/<%=@employee.workdayid%>/employtrains">Completed Trainings</a><br>
 <a href="/sites/<%=@site.id%>/employees/<%=@employee.workdayid%>/edit">Edit Employee</a><br>
 <a href="/sites/<%=@site.id%>">Employee List</a>
 
